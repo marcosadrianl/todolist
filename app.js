@@ -15,11 +15,12 @@ function renderizarTareas() {
         
         tareaElemento.innerHTML = `
             <span>${tarea.texto}</span>
-            <div style="display: flex; gap: 10px; margin-left: auto;">
+            <div class="tarea-acciones">
                 <button onclick="marcarCompletada(${index})">✔️</button>
-                <button onclick="eliminarTarea(${index})">❌</button>
-            </div>
+        <button onclick="eliminarTarea(${index})">❌</button>
+    </div>
         `;
+
         
         listaDeTareas.appendChild(tareaElemento);
     });

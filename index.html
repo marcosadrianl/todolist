@@ -29,16 +29,20 @@
 
     <!-- Meta Tags Generated with https://metatags.io -->
 </head>
-<body style="background-color: #f0f0f0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 75vh;">
-    <h1 class="comic-neue-bold">Lista de Tareas</h1>
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <input type="text" id="nuevaTarea" placeholder="Escribe una nueva tarea">
-        <button id="agregarTarea" class="comic-neue-regular">Agregar Tarea</button>
-    </div>
+<body style="background-color: #f0f0f0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 75vh; padding: 20px;">
+    <h1 class="comic-neue-bold" style="font-size: 2em; text-align: center;">Lista de Tareas</h1>
     
-    <h2 class="comic-neue-regular" style="margin-top: 20px;">Tareas:</h2>
-    <div id="listaDeTareas" class="comic-neue-regular" style="margin-top: 10px; width: 25%; display: flex; flex-direction: column; gap: 10px; justify-content: space-between;"></div>
+    <div style="display: flex; align-items: center; gap: 10px; width: 100%; max-width: 500px; margin-top: 20px;">
+        <input type="text" id="nuevaTarea" placeholder="Escribe una nueva tarea" style="flex: 1; padding: 10px; font-size: 1em; border-radius: 5px; border: 1px solid #ccc;">
+        <button id="agregarTarea" class="comic-neue-regular" style="padding: 10px 20px; font-size: 1em; border-radius: 5px; background-color: #007bff; color: #fff; border: none;">Agregar Tarea</button>
+    </div>
+
+    <h2 class="comic-neue-regular" style="margin-top: 20px; font-size: 1.5em; text-align: center;">Tareas:</h2>
+    
+    <div id="listaDeTareas" class="comic-neue-regular" style="margin-top: 10px; width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 10px;">
+    </div>
 
     <script src="./app.js"></script>
 </body>
 </html>
+

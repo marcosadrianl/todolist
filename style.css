@@ -24,3 +24,28 @@ font-family: "Comic Neue", cursive;
 font-weight: 700;
 font-style: normal;
 }
+
+.tarea-acciones {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+    /* Media query para pantallas pequeñas */
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 1.5em;
+        }
+        
+        h2 {
+            font-size: 1.2em;
+        }
+        
+        #nuevaTarea, #agregarTarea {
+            font-size: 0.9em;
+        }
+
+        #listaDeTareas {
+            width: 90%;
+        }
+    }
