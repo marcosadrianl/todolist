@@ -1,0 +1,24 @@
+Función: actualizarLocalStorage
+Descripción:
+    La función actualizarLocalStorage guarda el estado actual del arreglo tareas en el almacenamiento local del navegador (localStorage). Convierte el arreglo tareas en una cadena JSON utilizando JSON.stringify() antes de almacenarlo, lo que permite persistir las tareas y que puedan ser recuperadas en futuras sesiones o recargas de la página.
+
+    Parámetros:
+        No recibe ningún parámetro.
+
+    Valores de retorno:
+        No retorna ningún valor. Realiza una operación de almacenamiento en el navegador.
+
+Procedimiento:
+Convertir el arreglo tareas a formato JSON:
+    La función utiliza JSON.stringify(tareas) para convertir el arreglo tareas en una cadena JSON. Este formato es necesario para almacenar objetos en el almacenamiento local, ya que localStorage solo puede almacenar cadenas de texto.
+
+Almacenar en localStorage:
+    Luego, utiliza el método localStorage.setItem('tareas', ...) para almacenar la cadena JSON generada en el almacenamiento local bajo la clave 'tareas'. Esto asegura que el arreglo de tareas esté disponible incluso si el usuario recarga la página o cierra y vuelve a abrir el navegador.
+
+Notas adicionales:
+Esta función depende de que el arreglo tareas esté definido en el contexto global y que contenga un conjunto de tareas.
+El almacenamiento local (localStorage) tiene un límite de almacenamiento (generalmente unos 5MB por dominio), por lo que el tamaño del arreglo tareas debe ser moderado para evitar sobrepasar este límite.
+Esta función no verifica si localStorage está disponible en el navegador. Si necesitas manejar casos en los que localStorage no esté disponible (por ejemplo, en entornos sin soporte o en modo incógnito en algunos navegadores), sería útil envolver el uso de localStorage en un bloque try-catch.
+
+Ejemplo en contexto:
+Si después de ejecutar actualizarLocalStorage(), el usuario recarga la página, las tareas seguirán disponibles en el almacenamiento local y pueden ser recuperadas para actualizar la interfaz de usuario o mantener el estado de la aplicación.

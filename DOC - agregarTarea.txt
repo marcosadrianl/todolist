@@ -1,0 +1,54 @@
+Función: agregarTarea
+Descripción:
+    La función agregarTarea se encarga de agregar una nueva tarea al arreglo tareas a partir del texto ingresado en un campo de entrada (inputTarea). Si el campo de texto no está vacío, la tarea se agrega con el estado completada inicialmente como false, se actualiza el almacenamiento local (localStorage) para persistir la información y se vuelve a renderizar la lista de tareas en la interfaz de usuario.
+
+    Parámetros:
+        No recibe ningún parámetro.
+
+    Valores de retorno:
+        No retorna ningún valor. Realiza cambios en el estado de las tareas, el almacenamiento local y la representación visual de las tareas.
+
+Procedimiento:
+Obtención del texto de la tarea:
+    Se obtiene el texto de la tarea desde el campo de entrada inputTarea utilizando la propiedad value. Luego, se aplica trim() para eliminar los espacios en blanco al principio y al final del texto.
+    Comprobación de que el texto no esté vacío:
+
+    Se verifica si el texto de la tarea no está vacío. Si el texto está vacío (o contiene solo espacios), no se agrega la tarea.
+
+Agregando la nueva tarea:
+    Si el texto no está vacío, se crea un objeto que representa la tarea, con las propiedades:
+        texto: El texto de la tarea ingresado por el usuario.
+        completada: Inicialmente se establece como false, indicando que la tarea no está completada al momento de su creación.
+
+    Este objeto se agrega al arreglo global tareas mediante el método push().
+
+Limpiar el campo de entrada:
+    Después de agregar la tarea, el campo de entrada inputTarea se limpia, restableciendo su valor a una cadena vacía.
+
+Actualizar el almacenamiento local (localStorage):
+    Se llama a la función actualizarLocalStorage() para guardar el estado actualizado de las tareas en el almacenamiento local del navegador. Esto asegura que las tareas persistan incluso si la página se recarga.
+
+Renderizar la lista de tareas:
+    Finalmente, se llama a la función renderizarTareas() para actualizar la interfaz de usuario y mostrar la lista de tareas actualizada con la nueva tarea agregada.
+
+Ejemplo de uso:
+Supongamos que tenemos los siguientes elementos en el HTML:
+
+<input type="text" id="inputTarea">
+<button onclick="agregarTarea()">Agregar tarea</button>
+<div id="listaDeTareas"></div>
+
+Al llamar a la función agregarTarea(), si el campo de entrada inputTarea contiene el texto "Comprar pan", la función realizará lo siguiente:
+
+    - Verificará que el texto no está vacío.
+    - Agregará un objeto { texto: "Comprar pan", completada: false } al arreglo tareas.
+    - Limpiará el campo de entrada.
+    - Guardará el estado de las tareas en el localStorage.
+    - Llamará a renderizarTareas() para actualizar la interfaz y mostrar la nueva tarea.
+
+Notas adicionales:
+    La función depende de que existan las siguientes variables y funciones:
+        inputTarea: Un campo de entrada en el DOM donde el usuario puede escribir el texto de la tarea.
+        tareas: Un arreglo global que contiene las tareas, que es actualizado con la nueva tarea.
+        actualizarLocalStorage(): Una función que se encarga de guardar las tareas en el almacenamiento local.
+        renderizarTareas(): Una función que actualiza la visualización de la lista de tareas en la interfaz de usuario.

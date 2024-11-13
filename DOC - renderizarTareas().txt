@@ -1,0 +1,32 @@
+Función: renderizarTareas()
+Descripción:
+    La función renderizarTareas se encarga de actualizar y mostrar en el DOM (Document Object Model) la lista de tareas almacenadas en el arreglo tareas. La función crea un elemento div para cada tarea y lo inserta en un contenedor identificado por listaDeTareas. Además, agrega botones para marcar las tareas como completadas o eliminarlas.
+
+    Parámetros:
+    No recibe ningún parámetro.
+
+    Valores de retorno:
+    No retorna ningún valor. Modifica directamente el contenido del contenedor listaDeTareas en el DOM.
+
+Procedimiento:
+    Limpieza del contenedor:
+
+    Se borra todo el contenido del contenedor listaDeTareas para asegurarse de que se rendericen únicamente las tareas más actualizadas.
+    Iteración sobre el arreglo de tareas:
+
+    La función recorre el arreglo tareas (que debe ser un arreglo de objetos con la propiedad texto y completada) utilizando el método forEach.
+    Para cada tarea en el arreglo, se crea un elemento div y se asigna la clase CSS tarea.
+    Verificación de tarea completada:
+
+    Si la propiedad completada de la tarea es true, se agrega la clase CSS completada al elemento div, lo que podría aplicarse para dar estilo visual a las tareas completadas (por ejemplo, tacharlas).
+    Generación del contenido HTML:
+
+    Se establece el contenido HTML de cada tarea, incluyendo:
+    El texto de la tarea dentro de un <span>.
+    Dos botones para realizar acciones sobre la tarea:
+    Un botón para marcar la tarea como completada (con un ícono de check ✔️).
+    Un botón para eliminar la tarea (con un ícono de cruz ❌).
+    Los botones están asociados a funciones marcarCompletada y eliminarTarea, pasando el índice de la tarea como argumento para manipular específicamente esa tarea.
+    Adición al contenedor:
+
+    Cada elemento div que representa una tarea se agrega al contenedor listaDeTareas con appendChild, lo que asegura que las tareas se rendericen en el orden en que están en el arreglo.

@@ -1,0 +1,27 @@
+Función: eliminarTarea
+Descripción:
+    La función eliminarTarea elimina una tarea específica del arreglo tareas en función de su índice. Después de eliminar la tarea, se actualiza el almacenamiento local (localStorage) para reflejar el cambio y luego se vuelve a renderizar la lista de tareas en la interfaz de usuario, actualizando la vista para que la tarea eliminada ya no aparezca.
+
+    Parámetros:
+        index (Número): El índice de la tarea en el arreglo tareas que se desea eliminar.
+    
+    Valores de retorno:
+        No retorna ningún valor. Realiza cambios en el arreglo tareas, en el almacenamiento local y en la representación visual de las tareas.
+
+Procedimiento:
+Eliminar la tarea:
+    La función utiliza el método splice() para eliminar la tarea en el índice especificado (index). El método splice() modifica el arreglo original tareas, eliminando un solo elemento en la posición indicada (por eso se pasa el valor 1 como segundo argumento).
+
+Actualizar el almacenamiento local (localStorage):
+    Después de eliminar la tarea, se llama a la función actualizarLocalStorage() para guardar el estado actualizado de las tareas en el almacenamiento local. Esto asegura que la eliminación de la tarea se refleje incluso si el usuario recarga la página.
+
+Renderizar la lista de tareas:
+    Finalmente, se llama a la función renderizarTareas() para actualizar la interfaz de usuario y mostrar la lista de tareas actualizada, sin la tarea eliminada.
+
+Notas adicionales:
+La función depende de que existan las siguientes variables y funciones:
+
+    - tareas: Un arreglo global que contiene todas las tareas, cada una representada por un objeto con las propiedades texto y completada.
+    - actualizarLocalStorage(): Una función que guarda el estado actualizado del arreglo tareas en el almacenamiento local del navegador.
+    - renderizarTareas(): Una función que actualiza la interfaz de usuario, mostrando la lista de tareas en el DOM.
+    - Se asume que el índice (index) es válido, es decir, que corresponde a una tarea existente en el arreglo tareas.

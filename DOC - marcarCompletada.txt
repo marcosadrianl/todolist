@@ -1,0 +1,28 @@
+Función: marcarCompletada
+Descripción:
+    La función marcarCompletada se encarga de cambiar el estado de completitud de una tarea específica en el arreglo tareas. Cuando se invoca, alterna la propiedad completada de la tarea correspondiente al índice index, actualiza el almacenamiento local (localStorage) para reflejar el cambio y luego vuelve a renderizar la lista de tareas en la interfaz de usuario.
+
+    Parámetros:
+        index (Número): El índice de la tarea dentro del arreglo tareas que se desea marcar como completada o no completada.
+
+    Valores de retorno:
+        No retorna ningún valor. Modifica directamente el estado de la tarea y la representación visual de la lista de tareas.
+
+Procedimiento:
+Acceso a la tarea:
+    Utilizando el índice index, la función accede a la tarea correspondiente dentro del arreglo global tareas.
+
+Alternar el estado de completada:
+    La propiedad completada de la tarea seleccionada se invierte utilizando el operador de negación (!). Si la tarea estaba marcada como completada: true, se cambiará a completada: false, y viceversa.
+
+Actualizar el almacenamiento local (localStorage):
+    Una vez que se ha modificado el estado de la tarea, se llama a la función actualizarLocalStorage(), que guarda el arreglo actualizado de tareas en el almacenamiento local del navegador, asegurando que los cambios persistan incluso después de recargar la página.
+
+Renderizar la lista de tareas:
+    Finalmente, se invoca la función renderizarTareas() para volver a renderizar todas las tareas en la interfaz de usuario, reflejando el cambio en el estado de la tarea (completada/no completada).
+
+Notas adicionales:
+    La función depende de que existan las siguientes variables y funciones:
+    - tareas: Un arreglo global que contiene todas las tareas, donde cada tarea es un objeto con propiedades como texto y completada.
+    - actualizarLocalStorage(): Una función que se encarga de guardar el estado de las tareas en el almacenamiento local del navegador.
+    - renderizarTareas(): Una función que actualiza la representación visual de la lista de tareas en el DOM.
