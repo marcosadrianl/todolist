@@ -12,16 +12,20 @@ function renderizarTareas() {
         if (tarea.completada) {
             tareaElemento.classList.add('completada');
         }
-        
+
         tareaElemento.innerHTML = `
             <span>${tarea.texto}</span>
             <div class="tarea-acciones">
-                <button onclick="marcarCompletada(${index})">✔️</button>
-        <button onclick="eliminarTarea(${index})">❌</button>
-    </div>
+                <button class="btn-complete" onclick="marcarCompletada(${index})">
+                    <i class="ri-check-line"></i>
+                </button>
+                <button class="btn-delete" onclick="eliminarTarea(${index})">
+                    <i class="ri-delete-bin-line"></i>
+                </button>
+            </div>
         `;
 
-        
+
         listaDeTareas.appendChild(tareaElemento);
     });
 }
